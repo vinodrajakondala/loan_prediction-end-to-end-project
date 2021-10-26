@@ -20,7 +20,7 @@ with open('models/model_lf.pkl','rb') as f:
 
 
 
-@app.get("/start",response_class=HTMLResponse)
+@app.get("/",response_class=HTMLResponse)
 async def start(request: Request,):
     return templates.TemplateResponse("index.html", {"request": request})
 
