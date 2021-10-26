@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Loan Prediction Form</title>
+  </head>
+  <body>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Vinod Raja's Model</h2>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Loan Prediction</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Hi Friends, by filling the below paramters we can estimate wether you are elijible for Loan or not.</p>
+            
+            
+        </div>
+        <form action="/loan_predict" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter Gender</label>
+            <select class="form-control" id="gender" name="gender" aria-label="Default select example">
+                <option selected>--select gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Martial Status</label>
+            <select class="form-control" id="married" name="married" aria-label="Default select example">
+                <option selected>--Married --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Any Dependents </label>
+            <select class="form-control" id="dependents" name="dependents" aria-label="Default select example">
+                <option selected>--enter dependents  --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3+">3+</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter Education details </label>
+            <select class="form-control" id="education" name="education" aria-label="Default select example">
+                <option selected>-- Are you Graduated --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Self Employed </label>
+            <select class="form-control" id="employee" name="employee" aria-label="Default select example">
+                <option selected>-- Are you self_employed --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Credit History </label>
+            <select class="form-control" id="credit" name="credit" aria-label="Default select example">
+                <option selected>--enter credit history  --</option>
+                <option value="1.000000">1.000000</option>
+                <option value="0.000000">0.000000</option>
+                <option value="0.842199">0.842199</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Property_Area</label>
+            <select class="form-control" id="area" name="area" aria-label="Default select example">
+                <option selected>-- select Property_Area --</option>
+                <option value="Semiurban">Semiurban</option>
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+          </select>
+          </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter ApplicantIncome</label>
+            <input type="text" class="form-control" id="applicantincome" name="applicantincome" placeholder="ApplicantIncome">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter CoapplicantIncome</label>
+            <input type="text" class="form-control" id="coapplicantIncome" name="coapplicantIncome" placeholder="CoapplicantIncome">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter LoanAmount</label>
+            <input type="text" class="form-control" id="loanAmount" name="loanAmount" placeholder="LoanAmount">
+        </div>
+    
+
+            <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Predict</button>
+        </form>
+            <a class="btn btn-primary" href="./start" role="button">Back</a>
+        </div>
+      </section>
+      
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
