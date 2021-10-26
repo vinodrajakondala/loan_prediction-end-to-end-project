@@ -1,1 +1,1 @@
-web: python main.py   --master --processes 4 --threads 2
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app

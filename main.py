@@ -18,7 +18,9 @@ with open('models/model_rf.pkl','rb') as f:
 with open('models/model_lf.pkl','rb') as f:
     loaded_model_lg = pickle.load(f)
 
-
+@app.get("/")
+async def hello():
+    return {"Hello World"}
 
 @app.get("/start",response_class=HTMLResponse)
 async def start(request: Request,):
