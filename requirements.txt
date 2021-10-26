@@ -6,6 +6,7 @@ asgiref==3.4.1
 astunparse==1.6.3
 attrs==21.2.0
 backcall==0.2.0
+backports.entry-points-selectable==1.1.0
 bleach==4.1.0
 cached-property==1.5.2
 catboost==0.25.1
@@ -22,17 +23,20 @@ dask==2021.4.1
 debugpy==1.5.1
 decorator==4.4.2
 defusedxml==0.7.1
+distlib==0.3.3
 distributed==2021.4.1
 entrypoints==0.3
 evalml==0.23.0
 fastapi==0.70.0
 featuretools==0.23.3
+filelock==3.3.1
 flatbuffers==1.12
 fsspec==2021.4.0
 gast==0.4.0
 google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
 graphviz==0.16
+gunicorn==20.1.0
 h11==0.12.0
 h5py==3.1.0
 HeapDict==1.0.1
@@ -91,6 +95,7 @@ patsy==0.5.1
 phik==0.12.0
 pickleshare==0.7.5
 Pillow==8.4.0
+platformdirs==2.4.0
 plotly==4.14.3
 prometheus-client==0.11.0
 prompt-toolkit==3.0.21
@@ -122,6 +127,7 @@ seaborn==0.11.1
 Send2Trash==1.8.0
 shap==0.39.0
 six==1.16.0
+sklearn==0.0
 sktime==0.6.0
 slicer==0.0.7
 sniffio==1.2.0
@@ -143,6 +149,7 @@ traitlets==5.1.0
 typing-extensions==3.10.0.2
 urllib3==1.26.7
 uvicorn==0.15.0
+virtualenv==20.9.0
 visions==0.7.4
 wcwidth==0.2.5
 webencodings==0.5.1
