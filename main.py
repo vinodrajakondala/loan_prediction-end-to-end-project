@@ -109,5 +109,5 @@ async def spam_mail_detection(request: Request):
     return templates.TemplateResponse("spam_mail_detection.html", {"request":request})
 
 if __name__=="__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8999,reload=True)
+    uvicorn.run("main:app", host="0.0.0.0",reload=True)
 
