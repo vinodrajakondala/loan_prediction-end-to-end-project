@@ -19,6 +19,13 @@ conda create -n Loan_Prediction python=3.7
 conda activate Loan_Prediction
 pip install jupyter
 
+
+Random Forest predicts better than Logistic Regression, however, in the banking industry, as per the government regulations 
+and compliance requirements, one should be able to interpret the model results and clearly explain the reason for declining the loans to the clients.
+Hence Logistic Regression should be used to build the real model for deploying the same in production. 
+Logistic Regression is simple which is a score that is a combination of coefficients multiplied by features. 
+It can be interpreted as probabilities. If users are declined the features where their scores were low can 
+be identified and the account holder can be told how to improve their score.
+
 Resources :
 ----------------
-https://medium.com/@pankajgurbani01/machine-learning-model-to-predict-loan-default-9c33f87e1a38

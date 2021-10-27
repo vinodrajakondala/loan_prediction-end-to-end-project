@@ -88,9 +88,9 @@ async def loan_predict(request: Request, gender : str = Form(...), married :str 
     prediction = loaded_model_rf.predict([val])
 
     if prediction == "N":
-        pred = "Sorry , Your are not eligible for LOAN"
+        pred = "Sorry , You are not eligible for LOAN"
     else:
-        pred = "Congratulations, You'r eligible for LOAN"
+        pred = "Congratulations, You are eligible for LOAN"
 
     return templates.TemplateResponse("loan_output.html",  {"request":request, "p_text" : pred })
 
@@ -100,9 +100,9 @@ async def loan_predict(request: Request, gender : str = Form(...), married :str 
 async def anomaly_predict(request: Request):
     return templates.TemplateResponse("anomaly_detection.html", {"request":request})
 
-@app.get("/heartFailure_predict")
-async def heartFailure_predict(request: Request):
-    return templates.TemplateResponse("heart_failure_detection.html", {"request":request})
+@app.get("/personality_predict")
+async def personality_predict(request: Request):
+    return templates.TemplateResponse("personality_prediction.html", {"request":request})
 
 @app.get("/spam_mail_detection")
 async def spam_mail_detection(request: Request):
