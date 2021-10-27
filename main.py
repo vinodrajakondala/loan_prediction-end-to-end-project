@@ -29,8 +29,9 @@ async def anomaly_predict(request: Request):
     return templates.TemplateResponse("loan_prediction.html", {"request":request})
 
 @app.post("/loan_predict")
-async def loan_predict(request: Request, nam :str = Form(), gender : str = Form(...), married :str = Form(...), dependents : str = Form(...), education : str = Form(...),employee : str = Form(...), credit : str = Form(...), area : str = Form(...), applicantincome : str = Form(...), coapplicantIncome : str = Form(...), loanAmount : str = Form(...)):
-
+async def loan_predict(request: Request, nam :str = Form(...), gender : str = Form(...), married :str = Form(...), dependents : str = Form(...), education : str = Form(...),employee : str = Form(...), credit : str = Form(...), area : str = Form(...), applicantincome : str = Form(...), coapplicantIncome : str = Form(...), loanAmount : str = Form(...)):
+    
+    NAME = nam.capitalize().title()
     # gender
     male = 1 if gender == "Male" else 0
     
@@ -88,9 +89,9 @@ async def loan_predict(request: Request, nam :str = Form(), gender : str = Form(
     prediction = loaded_model_rf.predict([val])
 
     if prediction == "N":
-        pred = "Sorry " + nam +", you are not eligible for Loan"
+        pred = "Sorry " + NAME +", you are not eligible for Loan"
     else:
-        pred = "Congratulations " + nam + ", you are eligible for Loan"
+        pred = "Congratulations " + NAME + ", you are eligible for Loan"
 
     return templates.TemplateResponse("loan_output.html",  {"request":request, "p_text" : pred })
 
@@ -109,5 +110,5 @@ async def spam_mail_detection(request: Request):
     return templates.TemplateResponse("spam_mail_detection.html", {"request":request})
 
 if __name__=="__main__":
-    uvicorn.run("main:app", host="127.0.0.1",port=8076,reload=True)
+    uvicorn.run("main:app", host="0.0.0.0",port=8076,reload=True)
 
