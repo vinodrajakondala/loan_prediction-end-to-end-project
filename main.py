@@ -29,7 +29,7 @@ async def anomaly_predict(request: Request):
     return templates.TemplateResponse("loan_prediction.html", {"request":request})
 
 @app.post("/loan_predict")
-async def loan_predict(request: Request, nam :str = Form(...), gender : str = Form(...), married :str = Form(...), dependents : str = Form(...), education : str = Form(...),employee : str = Form(...), credit : str = Form(...), area : str = Form(...), applicantincome : str = Form(...), coapplicantIncome : str = Form(...), loanAmount : str = Form(...)):
+async def loan_predict(request: Request, nam :str = Form(...), gender : str = Form(...), married :str = Form(...), dependents : str = Form(...), education : str = Form(...),employee : str = Form(...), credit : str = Form(...), area : str = Form(...), applicantincome : float = Form(...), coapplicantIncome : float = Form(...), loanAmount : float = Form(...)):
     
     NAME = nam.capitalize().title()
     # gender
@@ -89,11 +89,15 @@ async def loan_predict(request: Request, nam :str = Form(...), gender : str = Fo
     prediction = loaded_model_rf.predict([val])
 
     if prediction == "N":
-        pred = "Sorry " + NAME +", you are not eligible for Loan"
+        pred = "Sorry "
+        pred1 = "You are not eligible for Loan"
+        c_flag = NAME
     else:
-        pred = "Congratulations " + NAME + ", you are eligible for Loan"
+        pred = "Congratulations "
+        c_flag = NAME
+        pred1 = "You are eligible for Loan"
 
-    return templates.TemplateResponse("loan_output.html",  {"request":request, "p_text" : pred })
+    return templates.TemplateResponse("loan_output.html",  {"request":request, "p_text" : pred ,"p_text2": pred1, "f_val" : c_flag})
 
  
 
